@@ -58,8 +58,7 @@ def result():
     return render_template("results.html",reviews=reviews[0:(len(reviews)-1)])
     
 if __name__ == '__main__':
-    # Get the port number from the environment variable, default to 10000
-    port = int(os.environ.get('PORT', 10000))
+    # Specify the port number directly, defaulting to 10000
+    port = 10000
     # Run the Flask app
     app.run(host='0.0.0.0', port=port)
-
