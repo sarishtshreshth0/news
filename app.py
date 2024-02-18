@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template, request
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as bs
-
+import os
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
@@ -57,5 +57,9 @@ def result():
             reviews.append(data)
     return render_template("results.html",reviews=reviews[0:(len(reviews)-1)])
     
-if __name__=="__main__":
-    app.run(host="0.0.0.0")
+if __name__ == '__main__':
+    # Get the port number from the environment variable, default to 10000
+    port = int(os.environ.get('PORT', 10000))
+    # Run the Flask app
+    app.run(host='0.0.0.0', port=port)
+
