@@ -2,4 +2,3 @@ Flask
 bs4
 pymongo
 gunicorn
-os
